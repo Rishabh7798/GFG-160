@@ -4,17 +4,19 @@ Move All Zeroes to End - https://www.geeksforgeeks.org/batch/gfg-160-problems/tr
 
 class Solution {
     void pushZerosToEnd(int[] arr) {
-        // code here
         int n = arr.length;
-        int nonZeroIndex = 0;
+        int nonZeroIndex = 0; // Pointer for the position of the next non-zero element
         
-        for (int i = 0; i < n; i++){
-            if (arr[i] != 0){
+        // Traverse the array
+        for (int i = 0; i < n; i++) {
+            if (arr[i] != 0) {
+                // Swap the non-zero element with the element at nonZeroIndex
                 int temp = arr[i];
                 arr[i] = arr[nonZeroIndex];
                 arr[nonZeroIndex] = temp;
                 
-                nonZeroIndex++;
+                // Move the nonZeroIndex forward
+               nonZeroIndex++;
             }
         }
     }
